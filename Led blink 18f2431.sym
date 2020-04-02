@@ -1,0 +1,61 @@
+000     @SCRATCH
+001     @SCRATCH
+001     _RETURN_
+002     @SCRATCH
+003     @SCRATCH
+005     main.@SCRATCH1
+006     @delay_ms1.P1
+F6C.2   FLTA
+FBB     CCP_2_LOW
+FBB     CCP_2
+FBC     CCP_2_HIGH
+FBE     CCP_1
+FBE     CCP_1_LOW
+FBF     CCP_1_HIGH
+FE1-FE2 @WRITE_PACKED_MEMORY.P1
+FE1-FE2 @READ_PACKED_MEMORY.P2
+FE9-FEA @WRITE_PACKED_MEMORY.P1
+FE9-FEA @READ_PROGRAM_MEMORY.P2
+FE9-FEA @WRITE_PROGRAM_MEMORY.P3
+FE9-FEA @READ_PACKED_MEMORY.P4
+FF6-FF8 @WRITE_PROGRAM_MEMORY.P1
+FF6-FF8 @READ_PROGRAM_MEMORY.P2
+
+ROM Allocation:
+000004  @delay_ms1
+00002A  @cinit1
+00002A  main
+000038  @cinit2
+
+Project Directory:
+    D:\Exercise\Others\LED blink test\
+
+Project Files:
+    Led blink 18f2431.c                                     [09-Mar-20 11:51  CRC=B9B21082]
+    Led blink 18f2431.h                                     [09-Mar-20 11:53  CRC=2EB8624F]
+    C:\Program Files (x86)\PICC\Devices\18F2431.h           [12-Nov-13 14:35  CRC=D3739609]
+
+Source signature=8F519EE3
+
+Units:
+    Led blink 18f2431 (main)
+
+Compiler Settings:
+    Processor:      PIC18F2431
+    Pointer Size:   16
+    ADC Range:      0-1023
+    Opt Level:      9
+    Short,Int,Long: UNSIGNED: 1,8,16
+    Float,Double:   32,32
+
+Output Files:
+    XREF file:   Led blink 18f2431.xsym
+    Errors:      Led blink 18f2431.err
+    Ext Symbols: Led blink 18f2431.esym
+    INHX32:      Led blink 18f2431.hex
+    Symbols:     Led blink 18f2431.sym
+    List:        Led blink 18f2431.lst
+    Debug/COFF:  Led blink 18f2431.cof
+    Project:     Led blink 18f2431.ccspjt
+    Call Tree:   Led blink 18f2431.tre
+    Statistics:  Led blink 18f2431.STA

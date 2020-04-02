@@ -1,0 +1,115 @@
+CCS PCH C Compiler, Version 5.015, 5967               09-Mar-20 11:53
+
+               Filename:   D:\Exercise\Others\LED blink test\Led blink 18f2431.lst
+
+               ROM used:   104 bytes (1%)
+                           Largest free fragment is 16280
+               RAM used:   5 (1%) at main() level
+                           6 (1%) worst case
+               Stack used: 1 locations
+               Stack size: 31
+
+*
+0000:  GOTO   002A
+.................... #include <Led blink 18f2431.h> 
+.................... #include <18F2431.h> 
+.................... //////////// Standard Header file for the PIC18F2431 device //////////////// 
+.................... /////////////////////////////////////////////////////////////////////////// 
+.................... ////        (C) Copyright 1996, 2013 Custom Computer Services          //// 
+.................... //// This source code may only be used by licensed users of the CCS C  //// 
+.................... //// compiler.  This source code may only be distributed to other      //// 
+.................... //// licensed users of the CCS C compiler.  No other use, reproduction //// 
+.................... //// or distribution is permitted without written permission.          //// 
+.................... //// Derivative programs created using this software in object code    //// 
+.................... //// form are not restricted in any way.                               //// 
+.................... /////////////////////////////////////////////////////////////////////////// 
+.................... #device PIC18F2431 
+....................  
+.................... #list 
+....................  
+.................... #device ADC=10 
+....................  
+.................... #FUSES NOWDT                    //No Watch Dog Timer 
+.................... #FUSES NOBROWNOUT               //No brownout reset 
+.................... #FUSES NOLVP                    //No low voltage prgming, B3(PIC16) or B5(PIC18) used for I/O 
+....................  
+.................... #use delay(crystal=20000000) 
+0004:  CLRF   FEA
+0006:  MOVLW  06
+0008:  MOVWF  FE9
+000A:  MOVF   FEF,W
+000C:  BZ    0028
+000E:  MOVLW  06
+0010:  MOVWF  01
+0012:  CLRF   00
+0014:  DECFSZ 00,F
+0016:  BRA    0014
+0018:  DECFSZ 01,F
+001A:  BRA    0012
+001C:  MOVLW  7B
+001E:  MOVWF  00
+0020:  DECFSZ 00,F
+0022:  BRA    0020
+0024:  DECFSZ FEF,F
+0026:  BRA    000E
+0028:  RETURN 0
+....................  
+....................  
+....................  
+....................  
+....................  
+....................  
+.................... void main() 
+002A:  CLRF   FF8
+002C:  BCF    FD0.7
+002E:  BCF    FB9.0
+0030:  BCF    FC1.6
+0032:  BCF    FC1.7
+0034:  MOVLW  00
+0036:  MOVWF  FB8
+.................... { 
+....................    set_tris_b(0x00);       //Set all portB pins to be output 
+0038:  MOVLW  00
+003A:  MOVWF  F93
+....................    output_bit(PIN_B0,0);   //Initialy turn the LED off 
+003C:  BCF    F8A.0
+003E:  BCF    F93.0
+....................    //Example blinking LED program 
+....................    while(true) 
+....................    { 
+....................       output_bit(PIN_B0,1);   //Turn LED on 
+0040:  BSF    F8A.0
+0042:  BCF    F93.0
+....................       delay_ms(1000);          //Blinking period of 500ms =0.5s 
+0044:  MOVLW  04
+0046:  MOVWF  05
+0048:  MOVLW  FA
+004A:  MOVWF  06
+004C:  RCALL  0004
+004E:  DECFSZ 05,F
+0050:  BRA    0048
+....................       output_bit(PIN_B0,0);   //Turn LED off 
+0052:  BCF    F8A.0
+0054:  BCF    F93.0
+....................       delay_ms(1000); 
+0056:  MOVLW  04
+0058:  MOVWF  05
+005A:  MOVLW  FA
+005C:  MOVWF  06
+005E:  RCALL  0004
+0060:  DECFSZ 05,F
+0062:  BRA    005A
+0064:  BRA    0040
+....................    } 
+....................  
+.................... } 
+0066:  SLEEP 
+
+Configuration Fuses:
+   Word  1: C200   HS FCMEN IESO
+   Word  2: 3E0C   PUT NOBROWNOUT BORV20 NOWDT WDT32768 NOWINEN
+   Word  3: 9D3C   NOPWMPIN LPOL_HIGH HPOL_HIGH T1LOWPOWER MCLR
+   Word  4: 0081   STVREN NOLVP NODEBUG
+   Word  5: C00F   NOPROTECT NOCPB NOCPD
+   Word  6: E00F   NOWRT NOWRTC NOWRTB NOWRTD
+   Word  7: 400F   NOEBTR NOEBTRB

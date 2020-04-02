@@ -1,0 +1,25 @@
+[PROJECT]
+Target=Led blink 18f2431.hex
+Processor_Text=PIC18F2431
+CCSVerions=5.015
+Compiler=PCH
+CCSVersion=5.015
+[Target Data]
+FileList=Led blink 18f2431.c
+[Directories]
+Include=C:\Program Files (x86)\PICC\Devices\;C:\Program Files (x86)\PICC\Drivers\;C:\Program Files (x86)\PICC\Drivers\C:\Program Files (x86)\PICC\Devices\
+[D:\Exercise\Others\LED blink test\Led blink 18f2431]
+Type=4
+[mru-list]
+1=Led blink 18f2431.c
+[Opened Files]
+1=Led blink 18f2431.c
+2=..\..\Semester 181\Microcontroller\Homework\LED blink IO\1 LED blink IO\1 LED blink IO.c
+3=
+4=..\..\Semester 181\Microcontroller\Homework\LED blink IO\1 LED blink IO\1 LED blink IO.h
+5=
+[Led blink 18f2431.c]
+Type=4
+[Units]
+Count=1
+1=Led blink 18f2431 (main)
